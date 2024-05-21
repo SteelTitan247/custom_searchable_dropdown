@@ -2,11 +2,12 @@ name: custom_in_place_searchable_dropdown
 description: A custom searchable dropdown widget for Flutter, 
   in which the search bar appears on the dropdown itself.
 version: 1.0.0+1
-homepage: https://github.com/your_username/custom_dropdown
-repository: https://github.com/your_username/custom_dropdown.git
+homepage: https://github.com/SteelTitan247/custom_searchable_dropdown
+repository: https://github.com/SteelTitan247/custom_searchable_dropdown.git
 
 environment:
-  sdk: ">=2.12.0 <4.0.0"
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=1.12.0"
 
 dependencies:
   flutter:

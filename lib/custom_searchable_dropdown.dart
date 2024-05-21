@@ -24,6 +24,7 @@ class CustomSearchableDropDown extends StatefulWidget {
   final String? loadingText;
   final CustomSearchableDropDownItem? initialValue;
   final TextStyle? textStyle;
+  final Color? borderColor;
 
   const CustomSearchableDropDown({
     super.key,
@@ -34,7 +35,8 @@ class CustomSearchableDropDown extends StatefulWidget {
     required this.title,
     this.loadingText,
     this.initialValue,
-    this.textStyle
+    this.textStyle,
+    this.borderColor,
   });
 
   @override
@@ -126,7 +128,7 @@ class _CustomSearchableDropDownState<T>
             child: SizedBox(
               child: ValueListenableBuilder(
                 valueListenable: list,
-                builder: (context, myList, child) {
+                builder: (BuildContext context, List<CustomSearchableDropDownItem> myList, Widget? child) {
                   return SizedBox(
                     height: getHeight(myList.length),
                     child: Scrollbar(
@@ -262,10 +264,10 @@ class _CustomSearchableDropDownState<T>
               floatingLabelBehavior: FloatingLabelBehavior.always,
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4),
-                  borderSide: const BorderSide(color: Colors.blue)),
+                  borderSide: BorderSide(color: widget.borderColor??Colors.blue)),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4),
-                  borderSide: const BorderSide(color: Colors.blue)),
+                  borderSide: BorderSide(color: widget.borderColor??Colors.blue)),
               labelText: widget.title,
             ),
             onChanged: (value) {
